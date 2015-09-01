@@ -1,0 +1,36 @@
+$color-white: white;
+$color-brand: #17BCC2;
+$color-hover: #7AC1C4;
+$color-copy: #42595A;
+$color-copy-light: #6B8B8D;
+$color-background: #F8FAFA;
+$color-link: black;
+
+$color-logo: #00C5CC;
+$color-logo-two: #B6E5E7;
+$color-logo-three: #E4F9FA;
+$color-border: #979797;
+
+$font-brand: Baskerville;
+$font-copy: Georgia;
+
+$font-size-copy:1rem;
+$font-size-small:0.8rem;
+
+$font-size-h1:1.8rem;
+$font-size-h2:1.1825rem;
+$font-size-h3:1rem;
+$font-size-h4:0.9rem;
+$font-sizes: (
+        'h1': $font-size-h1,
+        'h2': $font-size-h2,
+        'h3': $font-size-h3,
+        'h4': $font-size-h4
+);
+
+$font-margin-bottom: 1rem;
+$font-leading: 1.5;
+
+$site-margin: 2rem;
+$side-margin: 1rem;
+$site-top-margin: 8rem;

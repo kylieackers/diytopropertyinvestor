@@ -1,0 +1,114 @@
+.calc-header h1 {
+	text-align: center;
+	}
+
+fieldset {
+        width: 65%;
+        float: left;
+        border: 1px solid lighten($color-border, 0.9);
+	border-radius: 5px;
+}
+legend {
+        color: #4bb7c6;
+        font-weight: bold;
+        padding: 10px;
+}
+.title {
+        float: left;
+        width: 60%;
+        padding: 2px;
+}
+
+.main-box,
+.input-box, 
+.radio-box,
+.output-box {
+	@extend %clearfix;
+}
+
+.fieldset-box {
+	margin: 0 auto;
+	position: relative;
+        overflow: auto;
+        width: 100%;
+	font-size: $font-size-small;
+	legend {
+		font-size: $font-size-h4;
+	}
+	input {
+		color: $color-copy-light;
+        	padding: 2px;
+        	text-align: right;
+        	float: right;
+		background-color: $color-white;
+	}
+	input[type=number]{
+        	width: 35%;
+	}
+}
+
+.total {
+        width: 30%;
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+	input[type=number]{
+        	width: 90%;
+	}
+}
+
+.radio-box input,
+.radio-box label {
+        white-space: nowrap;
+        float: left;
+}
+.radio-box label {
+	padding-right: 0.8rem;
+}
+
+.result-box {
+	background-color: $color-logo-three;
+        border: 1px solid lighten($color-border, 0.9);
+	border-radius: 5px;
+	margin-top: 2rem;
+	padding-bottom: 1rem;
+	h1 {
+		text-align: center;
+		margin: 1rem 0;
+	}
+	legend {
+		font-size: $font-size-h4;
+	}
+}
+.output-box {
+	width: 75%;
+	margin: 0 auto;
+        font-weight: bold;
+	.title {
+		width: 70%;
+	}
+	input[type=number]{
+		background-color: $color-logo-three;
+		padding: 0;
+	}
+}
+.percent {
+	width: 25%;
+	display: inline-block;
+	float: right;
+	input {
+		text-align: right;
+		width: 80%;
+		display: inline-block;
+	}
+}
+.button-box {
+	width: 50%;
+	margin: 0 auto;
+	.button {
+		width: 47%;
+		display: inline-block;
+		margin: 1rem 1% 0;
+	}
+
+}

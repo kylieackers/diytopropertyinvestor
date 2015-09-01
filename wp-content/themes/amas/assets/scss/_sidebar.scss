@@ -1,0 +1,81 @@
+
+.menu-secondary,
+.side-subscribe,
+.calculator {
+        padding: 1rem;
+	margin-bottom: 1rem;
+        background-color: $color-logo-three;
+	border: 1px solid $color-border;
+	border-radius: 5px;
+}
+
+.menu-title {
+	font-size: $font-size-h4;
+	font-weight: bold;
+	margin-bottom: 0.25rem;
+	cursor: pointer;
+	color: $color-copy;
+
+	&:hover {
+		color: $color-copy-light;
+	}
+
+	@media screen and (min-width: 700px) and (max-width: 870px) {
+		font-size: $font-size-small;
+	}
+	@media screen and (max-width: 700px)  {
+		font-size: $font-size-h4;
+	}
+
+}
+.menu-list {
+
+	ul {
+                font-size: $font-size-small;
+		list-style-type: none;
+		margin-bottom: 0;
+        }
+        a {
+		color: $color-copy;
+
+		&:hover {
+			color: $color-copy-light;
+		}
+        }
+}
+.menu-arrow-down:before {
+	content: '\25be    ';
+}
+.menu-arrow-up:before {
+	content: '\25b4    ';
+}
+
+.side-subscribe input[type="text"],
+.side-subscribe input[type="email"] {
+	padding: 0.1rem;
+        }
+
+.side-subscribe,
+.calculator {
+	color: $color-copy;
+	text-align: center;
+	p {
+		font-weight: bold;
+	}
+	p:nth-child(2) {
+		font-size: $font-size-small;
+		font-weight: normal;
+		color: $color-copy-light;
+	}
+}
+.side-subscribe .button,
+.calculator .button {
+	@media screen and (max-width:865px){
+		font-size: $font-size-small;
+		padding: 0.25rem;
+	}
+	@media screen and (max-width:750px){
+		font-size: 0.7rem;
+		padding: 0.15rem;
+	}
+}

@@ -1,0 +1,142 @@
+
+/* 
+ * Navigation
+ */
+
+$logo-width: 6.5rem;
+$logo-width-medium: $logo-width * 0.75;
+$logo-width-small: $logo-width * 0.5;
+
+$logo-height: 5.7rem;
+$logo-text: 1rem;
+
+.site-nav {
+	font-family: $font-brand;
+	position: relative;
+	margin-bottom: 3rem;
+	
+	ul {
+		font-size: $font-size-h4;
+		padding-left: $logo-width + 2.5rem;
+		@media screen and (max-width: 700px) {
+			padding-left: $logo-width-medium + 2.5rem;
+		}
+		@media screen and (max-width: 350px) {
+			padding-left: $logo-width-small + 2.5rem;
+		}
+	}
+	li {
+		display: inline-block;
+		padding: 0.5rem;
+		font-weight: bold;
+		@media screen and (max-width: 700px) {
+			padding: 0.3rem;
+		}
+		@media screen and (max-width: 350px) {
+			padding: 0.2rem;
+		}
+	}
+
+}
+
+.menu-nav {
+	width: 100%;
+	background-color: $color-logo-three;
+	border-top: 1px solid $color-border;
+	border-bottom: 1px solid $color-border;
+	position: absolute;
+	top: -$site-top-margin * 0.6;
+	z-index: -5;
+	@media screen and (max-width: 700px) {
+		top: -$site-top-margin * 0.68;
+	}
+	@media screen and (max-width: 350px) {
+		top: -$site-top-margin * 0.73;
+	}
+}
+
+
+
+/*
+ * Logo
+ */
+
+.site-logo {
+	margin: $side-margin;
+	width: $logo-width;
+	height: $logo-height;
+	position: absolute;
+	top: -$site-top-margin * 0.922;
+	@media screen and (max-width: 388px) {
+		top: -$site-top-margin * 0.83;
+	}
+}
+.logo {
+	width: $logo-width;
+	height: $logo-height;
+	color: #000;
+	border: 1px solid lighten($color-border, 8);
+	@media screen and (max-width: 700px) {
+		width: $logo-width-medium;
+		height: $logo-height * 0.75;
+	}
+	@media screen and (max-width: 350px) {
+		width: $logo-width-small;
+		height: $logo-height * 0.5;
+	}
+}
+.logo-main {
+	background-color: $color-logo;
+	&:hover {
+		color: $color-logo-three;
+	}
+}
+.logo-second {
+	background-color: $color-logo-two;
+	position: absolute;
+	top: -5px;
+	left: 5px;
+	z-index: -1;
+}
+.logo-third {
+	background-color: $color-logo-three;
+	position: absolute;
+	top: -10px;
+	left: 10px;
+	z-index: -2;
+}
+.logo-text {
+	text-align: center;
+	line-height: 1;
+	margin: 0;
+}
+.logo-diy {
+	margin-top: 0.5rem;
+	font-size: $logo-text * 1.4;
+	@media screen and (max-width: 700px) {
+		font-size: $logo-text * 1.4 * 0.75;
+	}
+	@media screen and (max-width: 350px) {
+		margin-top: 0.2rem;
+		font-size: $logo-text * 1.4 * 0.5;
+	}
+}
+.logo-to {
+	font-size: $logo-text;
+	@media screen and (max-width: 700px) {
+		font-size: $logo-text * 0.75;
+	}
+	@media screen and (max-width: 350px) {
+		font-size: $logo-text * 0.5;
+	}
+}
+.logo-last {
+	font-weight: bold;
+	font-size: $logo-text * 1.2;
+	@media screen and (max-width: 700px) {
+		font-size: $logo-text * 1.2 * 0.75;
+	}
+	@media screen and (max-width: 350px) {
+		font-size: $logo-text * 1.2 * 0.5;
+	}
+}

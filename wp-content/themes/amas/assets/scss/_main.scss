@@ -1,0 +1,140 @@
+/*
+ * Styling for main components of diytopropertyinvestor.co.uk
+ */
+
+body {
+	background-color: $color-background;
+	font-family: $font-copy;
+	color: $color-copy-light;
+	font-size: $font-size-copy;
+}
+
+h1, h2, h3, h4 {
+	font-family: $font-brand;
+	font-weight: bold;
+	color: $color-brand;
+}
+
+a:hover {
+	color: $color-hover;
+}
+
+a {
+	color: $color-copy;
+}
+
+/*
+ * Main content on the home page
+ */
+
+.content-area {
+	@extend %clearfix;
+	margin: $side-margin;
+	margin-top: $site-top-margin;
+	
+}
+
+.site-main {
+	width: 70%;
+	float: left;
+
+	@media screen and (max-width: 700px) {
+		width: 100%;
+		float: none;
+	}
+}
+
+.sidebar-area {
+	width: 25%;
+	float: right;
+	@media screen and (max-width: 700px) {
+		width: 100%;
+		float: none;
+	}
+}
+
+/* 
+ * Styling for blog excerpts
+ */
+
+article {
+	margin: 2rem 0;
+}
+
+.excerpt-image,
+.page-image {
+	@extend %clearfix;
+	float: left;
+	padding: 0.5rem 1rem 0 0 ;
+	position: relative;
+
+	img {
+		border: 1px solid $color-border;
+	}
+}
+.excerpt-content {
+	position: relative;
+	&:after {
+		content: "";
+		position: absolute;
+		border-bottom: 2px solid $color-brand;
+		left: 25%;
+		bottom: -1rem;
+		width: 40%;
+		height: 0.1px;
+	}
+}
+
+/*
+ * Styling for individual pages (posts and pages)
+ */
+
+.page-title {
+	color: $color-copy;
+}
+
+.page-header {
+	text-align: center;	
+	padding-bottom: 1rem;
+}
+.post-content {
+	width: 90%;
+	margin: 0 auto;
+}
+/* 
+ * Stying for input and buttons
+ */
+input {
+        border: none;
+        padding: 0.5rem 0;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+	margin-bottom: 0.2rem;
+        border-radius: 2px;
+        background-color: $color-background;
+}
+
+input[type="email"],
+input[type="text"]{
+	font-style: italic;
+	text-align: center;
+	color: $color-copy-light;
+	font-size: $font-size-h4;
+	width: 100%;
+}
+input:focus {
+	outline: none;
+}
+.button {
+        font-size: $font-size-h4;
+        background-color: $color-logo-two;
+        margin-top: 1rem ;
+        padding: 0.5rem;
+        box-shadow:
+                0 0 0 1px $color-border,
+                0 0 0 2px $color-white;
+        &:hover {
+                background-color: $color-logo-three;
+        }
+}

@@ -1,0 +1,20 @@
+
+.footer-area {
+	background-color: $color-brand;
+	.email {
+		width: 30%;
+	}
+}
+
+.email-title {
+	font-family: $font-brand;
+	font-size: $font-size-h2;
+	font-weight: bold;
+	text-align: center;
+	color: $color-logo-three;
+	padding-top: 1rem;
+}
+
+.subscribe {
+	padding-bottom: 1rem;
+}
