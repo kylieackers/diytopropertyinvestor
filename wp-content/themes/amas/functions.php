@@ -19,6 +19,10 @@
 		wp_enqueue_script( 'jquery');
 		wp_enqueue_script( 'amas_menu', get_template_directory_uri(). '/assets/js/script.js' );
 		wp_enqueue_script( 'calculator', get_template_directory_uri(). '/assets/js/calculator.js' );
+
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+                wp_enqueue_script( 'comment-reply' );
+		}
 	}
 	add_action( 'wp_enqueue_scripts', 'amas_scripts' );
 
@@ -67,9 +71,6 @@ endif;
 
 
 
-
-
-
         if ( !function_exists( 'timthumb' ) ) {
                 function timthumb( $src, $w = 500, $h = 500, $zc = 1, $s = 0, $f = 0 ) {
                         global $current_blog;
@@ -86,6 +87,60 @@ endif;
                         return tt() . '?' . http_build_query( compact( 'src', 'w', 'h', 'zc', 's', 'f' ) );
                 }
         }
+
+
+if ( ! function_exists( 'display_comments' ) ) :
+function display_comments( $comment, $args, $depth ) {
+        $GLOBALS['comment'] = $comment;
+        switch ( $comment->comment_type ) :
+                case 'pingback' :
+                case 'trackback' :
+                // Display trackbacks differently than normal comments.
+        ?>
+        <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+                <p>
+			<?php _e( 'Pingback:'); ?> <?php comment_author_link(); ?> 
+		   	<?php edit_comment_link( __( '(Edit)' ), '<span class="edit-link">', '</span>' ); ?>
+		</p>
+        <?php
+                break;
+                default :
+                // Proceed with normal comments.
+                global $post;
+        ?>
+        <li <?php comment_class(); ?> id="li-comment-<?php comment_ID(); ?>">
+                <article id="comment-<?php comment_ID(); ?>" class="comment">
+                        <header class="comment-meta comment-author vcard">
+                                <?php
+                                        echo get_avatar( $comment, 74 );
+                                        printf( '<div class="comment-author-link">%1$s%2$s</div>',
+                                                get_comment_author_link(),
+                                                // If current post author is also comment author, make it known visually.
+                                                ( $comment->user_id === $post->post_author ) ? '<span>' . __( ' - Post author' ) . '</span>' : ''
+                                        );
+                                        printf( '<div class="comment-date-time">%1$s</div>',
+                                                sprintf( __( '%1$s at %2$s', 'radiate' ), get_comment_date(), get_comment_time() )
+                                        );
+                                        edit_comment_link();
+                                ?>
+                        </header><!-- .comment-meta -->
+                       <?php if ( '0' == $comment->comment_approved ) : ?>
+                                <p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.' ); ?></p>
+                        <?php endif; ?>
+
+                        <section class="comment-content comment">
+                                <?php comment_text(); ?>
+                                <?php comment_reply_link( array_merge( $args, array( 'reply_text' => __( 'Reply'), 'after' => '', 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+                        </section><!-- .comment-content -->
+
+                </article><!-- #comment-## -->
+        <?php
+                break;
+        endswitch; // end comment_type check
+}
+endif; // ends check for display_comments()
+
+
 
 
 ?>
