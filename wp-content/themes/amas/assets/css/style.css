@@ -328,6 +328,12 @@ input:focus {
   .button:hover {
     background-color: #E4F9FA; }
 
+/*
+ *  Post pagination
+ */
+.nav-old {
+  float: right; }
+
 .menu-secondary,
 .side-subscribe,
 .calculator {

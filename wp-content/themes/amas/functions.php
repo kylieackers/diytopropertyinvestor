@@ -37,6 +37,39 @@
                 }
         }
 
+	// Small function for pagination when there are more postsA
+	if ( !function_exists( 'paging_nav' ) ) :
+		function paging_nav() {
+        		if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
+                		return;
+        		}
+        		?>
+        		<nav class="navigation paging-navigation" role="navigation">
+                		<div class="nav-links">
+
+                        	<?php if ( get_next_posts_link() ) : ?>
+                        		<div class="nav-old">
+						<?php next_posts_link( __( 'Older posts <span class="meta-nav">&rarr;</span>' )); ?>
+					</div>
+                        	<?php endif; ?>
+
+                        	<?php if ( get_previous_posts_link() ) : ?>
+                        		<div class="nav-new">
+						<?php previous_posts_link( __( '<span class="meta-nav">&larr;</span> Newer posts')); ?>
+					</div>
+                        	<?php endif; ?>
+
+                		</div><!-- .nav-links -->
+        		</nav><!-- .navigation -->
+        <?php
+}
+endif;
+
+
+
+
+
+
         if ( !function_exists( 'timthumb' ) ) {
                 function timthumb( $src, $w = 500, $h = 500, $zc = 1, $s = 0, $f = 0 ) {
                         global $current_blog;

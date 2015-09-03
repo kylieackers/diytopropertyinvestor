@@ -31,6 +31,8 @@
 					</div>
 				</article>
 			<?php endwhile;
+			paging_nav(); 
+
 			else:
 				get_template_part('no-posts');
 			endif;
